@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MyTableViewController : UITableViewController
-
+@property (nonatomic, strong) NSArray *photos; //of Flickr photo NSDictionary
 @end
