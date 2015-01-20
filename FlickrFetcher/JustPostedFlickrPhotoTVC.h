@@ -8,6 +8,10 @@
 
 #import "MyTableViewController.h"
 
-@interface JustPhotosFlickrPhotoTVC : MyTableViewController
+@interface JustPostedFlickrPhotoTVC : MyTableViewController
+
+//@property (strong, nonatomic) NSArray *imagesReturned;
+
+-(void)fetchPhotos;
 
 @end

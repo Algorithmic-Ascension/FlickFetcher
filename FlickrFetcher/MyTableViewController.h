@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ImageViewController.h"
 
 @interface MyTableViewController : UITableViewController
+
 @property (nonatomic, strong) NSArray *photos; //of Flickr photo NSDictionary
+
+- (void)prepareImageViewController:(ImageViewController *)ivc toDisplayPhoto:(NSDictionary *)photo;
+
 @end

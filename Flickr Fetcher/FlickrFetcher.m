@@ -20,7 +20,7 @@
 + (NSURL *)URLforTopPlaces
 
 {
-    return [self URLForQuery:@"https://api.flickr.com/services/rest/?method=flickr.places.getTopPlacesList&place_type_id=7"];
+    return [self URLForQuery:[@"https://api.flickr.com/services/rest/?method=flickr.places.getTopPlacesList&place_type_id=" stringByAppendingString:FLICKR_PLACE_ID_PARAMETER]];
 }
 
 + (NSURL *)URLforPhotosInPlace:(id)flickrPlaceId maxResults:(int)maxResults;

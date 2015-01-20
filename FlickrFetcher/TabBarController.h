@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  TabBarController.h
 //  FlickrFetcher
 //
-//  Created by Benjamin Chen on 1/14/15.
+//  Created by Benjamin Chen on 1/19/15.
 //  Copyright (c) 2015 Benjamin Chen. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface TabBarController : UITabBarController
 
 @end
-

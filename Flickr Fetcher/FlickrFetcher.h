@@ -7,6 +7,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define FLICKR_PLACE_ID_PARAMETER @"12" //country, @"7" //locality
+
 // key paths to photos or places at top-level of Flickr results
 #define FLICKR_RESULTS_PHOTOS @"photos.photo"
 #define FLICKR_RESULTS_PLACES @"places.place"

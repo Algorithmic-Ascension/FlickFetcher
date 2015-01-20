@@ -51,7 +51,7 @@
     self.imageView.image = image; // does not change the frame of the UIImageView
     [self.imageView sizeToFit];   // update the frame of the UIImageView
 
-    // self.scrollView could be nil on the next line if outlet-setting has not happened yet
+//     self.scrollView could be nil on the next line if outlet-setting has not happened yet
     self.scrollView.contentSize = self.image ? self.image.size : CGSizeZero;
 
     [self.spinner stopAnimating];

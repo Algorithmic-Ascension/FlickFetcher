@@ -8,6 +8,7 @@
 
 #import "MyTableViewController.h"
 #import "FlickrFetcher.h"
+#import "ImageViewController.h"
 
 @implementation MyTableViewController
 
@@ -24,7 +25,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return [self.photos count];
+	return self.photos.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -36,9 +37,27 @@
 	cell.textLabel.text = [photo valueForKeyPath:FLICKR_PHOTO_TITLE];
 	cell.detailTextLabel.text = [photo valueForKeyPath:FLICKR_PHOTO_DESCRIPTION];
 	
-	
-	
 	return cell;
+}
+
+- (void)prepareImageViewController:(ImageViewController *)ivc toDisplayPhoto:(NSDictionary *)photo;
+{
+	ivc.imageURL = [FlickrFetcher URLforPhoto:photo format:FlickrPhotoFormatLarge];
+	ivc.title = [photo valueForKeyPath:FLICKR_PHOTO_TITLE];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+	if([sender isKindOfClass:[UITableViewCell class]]){
+		NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+		if (indexPath) {
+			if ([segue.identifier isEqualToString:@"Display Photo"]) {
+				if ([segue.destinationViewController isKindOfClass:[ImageViewController class]]) {
+					[self prepareImageViewController:segue.destinationViewController
+									  toDisplayPhoto:self.photos[indexPath.row]];
+				}
+			}
+		}
+	}
 }
 
 @end

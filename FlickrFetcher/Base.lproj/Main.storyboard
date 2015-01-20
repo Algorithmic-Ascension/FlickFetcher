@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2Z8-bE-yf4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8TE-Za-jU2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -7,13 +7,13 @@
         <!--Shutterbug-->
         <scene sceneID="23P-kg-iF0">
             <objects>
-                <tableViewController id="2pk-Z9-mjG" customClass="JustPhotosFlickrPhotoTVC" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Flickr Photo Cell" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2pk-Z9-mjG" customClass="JustPostedFlickrPhotoTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Eod-jA-u7p">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Flickr Photo Cell" textLabel="beQ-8D-VTl" detailTextLabel="Rj6-t2-jvS" style="IBUITableViewCellStyleSubtitle" id="gsW-Bm-j8M">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="Flickr Photo Cell" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Flickr Photo Cell" textLabel="beQ-8D-VTl" detailTextLabel="Rj6-t2-jvS" style="IBUITableViewCellStyleSubtitle" id="gsW-Bm-j8M">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gsW-Bm-j8M" id="ABf-B2-RwC">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -33,7 +33,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="9Jh-by-r5s" kind="push" id="nLx-Ph-EHh"/>
+                                    <segue destination="9Jh-by-r5s" kind="push" identifier="Display Photo" id="gSu-FH-Fxj"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -46,7 +46,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gzr-U0-NQ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1293" y="-457"/>
+            <point key="canvasLocation" x="1825" y="-457"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="5D1-ib-G7Z">
@@ -86,25 +86,44 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XLI-1b-XWn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1712" y="-457"/>
+            <point key="canvasLocation" x="2244" y="-457"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="eeN-A4-TOz">
+        <scene sceneID="Hna-Tq-22u">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2Z8-bE-yf4" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8TE-Za-jU2" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="upQ-du-ehZ">
+                    <navigationItem key="navigationItem" id="LVi-EF-Ebh"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XhW-dd-25a">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="2pk-Z9-mjG" kind="relationship" relationship="rootViewController" id="tD8-6g-vaw"/>
+                        <segue destination="2pk-Z9-mjG" kind="relationship" relationship="rootViewController" id="vbt-dj-I8a"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="avF-D8-BTL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jLB-LZ-Syb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="761" y="-457"/>
+            <point key="canvasLocation" x="1411" y="-457"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ZmU-cI-aKj">
+            <objects>
+                <tabBarController id="64f-ve-vjc" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Ayl-Lx-Vjm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="8TE-Za-jU2" kind="push" id="CyS-T3-rMC"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rOl-g0-GOc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1010" y="-457"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
